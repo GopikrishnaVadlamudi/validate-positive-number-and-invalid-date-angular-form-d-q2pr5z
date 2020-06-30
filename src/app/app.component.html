@@ -1,0 +1,9 @@
+<form [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
+  
+  <input formControlName="dateFrom" type="date" useValueAsDate />
+  <input formControlName="dateTo" type="date" useValueAsDate />
+  <!--<button [disabled]="form.pristine || form.invalid" type="submit">Submit</button>-->
+  <button type="submit">Submit</button>
+  <label *ngIf="form.errors">{{ form.errors?.dates | json }}</label>
+  
+</form>
